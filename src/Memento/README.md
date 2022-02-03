@@ -14,7 +14,7 @@ This interface is empty but we could easily define methods that all state implem
 
 To track the state we need to implement a concrete class that holds the booking state. The `BookingState` (memento) will receive the concrete `Booking` model and saves its state. 
 
-`Booking` and `BookingState` are tightly coupled. In this simple example its find. However if you want to support multiple states with different structures you likely want to use a proper interface.
+`Booking` and `BookingState` are tightly coupled. In this simple example it's fine. However if you want to support multiple states with different structures you likely want to use a proper interface.
 
 To track a change we save the current state to a `BookingState` and `push()` it to the `History`.
 
