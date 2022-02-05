@@ -29,7 +29,7 @@ class BatteryTest extends TestCase
         try {
             new Battery(-1);
 
-            $this->fail('Should no be bellow 0.');
+            $this->fail('Should not be bellow 0.');
         } catch (\Exception $e) {
             $this->assertSame('Battery can only have charge from 0% to 100%', $e->getMessage());
         }
@@ -37,7 +37,7 @@ class BatteryTest extends TestCase
         try {
             new Battery(101);
 
-            $this->fail('Should no be above 100.');
+            $this->fail('Should not be above 100.');
         } catch (\Exception $e) {
             $this->assertSame('Battery can only have charge from 0% to 100%', $e->getMessage());
         }
@@ -46,7 +46,7 @@ class BatteryTest extends TestCase
             $battery = new Battery(2);
             $battery->setCharge(-100);
 
-            $this->fail('Should no be set wrongly after creation.');
+            $this->fail('Should not be set wrongly after creation.');
         } catch (\Exception $e) {
             $this->assertSame('Battery can only have charge from 0% to 100%', $e->getMessage());
         }
