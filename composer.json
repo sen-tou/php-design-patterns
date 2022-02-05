@@ -5,7 +5,8 @@
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "Stvbyr\\PhpDesignPatterns\\": "src/"
+      "Stvbyr\\PhpDesignPatterns\\": "src/",
+      "Stvbyr\\PhpDesignPatterns\\Test\\": "tests/"
     }
   },
   "authors": [
@@ -15,6 +16,8 @@
   ],
   "minimum-stability": "stable",
   "require-dev": {
-    "phpunit/phpunit": "^9.5"
+    "phpunit/phpunit": "^9.5",
+    "psalm/plugin-phpunit": "^0.16.1",
+    "friendsofphp/php-cs-fixer": "^3.5"
   }
 }

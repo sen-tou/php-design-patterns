@@ -1,7 +1,17 @@
 <?php
 
-return (new PhpCsFixer\Config())
+declare(strict_types=1);
+
+$config = new PhpCsFixer\Config();
+
+return $config
+    ->setRiskyAllowed(true)
     ->setRules([
-        '@Symfony:risky' => true,
+        '@Symfony' => true,
     ])
-;
+    ->setFinder(
+        PhpCsFixer\Finder::create()
+            ->exclude(['.git'])
+            ->notPath('*.cache')
+            ->in(__DIR__)
+    );
