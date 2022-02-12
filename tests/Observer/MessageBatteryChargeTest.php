@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Stvbyr\PhpDesignPatterns\Test\Observer;
 
 use PHPUnit\Framework\TestCase;
@@ -10,7 +12,7 @@ class MessageBatteryChargeTest extends TestCase
 {
     public const CHARGE = 6;
 
-    public function testBatteryStateCanBeCreatedWithCorrentCharge()
+    public function testBatteryStateCanBeCreatedWithCorrentCharge(): void
     {
         /** @var BatteryState|MockObject */
         $batteryStateMock = $this->getMockBuilder(BatteryState::class)

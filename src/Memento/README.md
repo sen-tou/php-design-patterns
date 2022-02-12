@@ -26,6 +26,6 @@ This way the `Booking` is dependent to the `BookingState` but loosely coupled be
 
 ## Some things to note
 
-PHP doesn't support real Generics like other programming languages do. With the current implementation we can't make sure that exactly one concrete type of `StateInterface` is inserted/handled by the `History`. This leaves it error prone. We can however use libraries like [Psalm](https://psalm.dev/) to check for that. But this would to go beyond the scope of this example.
+PHP doesn't support real Generics like other programming languages do. With the current implementation we can't make sure that exactly one concrete type of `StateInterface` is inserted/handled by the `History`. This leaves it error prone. We can however use libraries like [Psalm](https://psalm.dev/) to check for that. ~~But this would to go beyond the scope of this example.~~
 
-In the example we don't handle the case of no changes in the history. This would throw errors because we can't restore a previous state if there is no previous state. How you would handle the error would depend on your needs.
+~~In the example we don't handle the case of no changes in the history. This would throw errors because we can't restore a previous state if there is no previous state. How you would handle the error would depend on your needs.~~ Now we throw a proper error in the `History`.
