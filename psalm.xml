@@ -3,4 +3,7 @@
     <projectFiles>
         <directory name="src" />
     </projectFiles>
+    <plugins>
+        <pluginClass class="Psalm\PhpUnitPlugin\Plugin" />
+    </plugins>
 </psalm>

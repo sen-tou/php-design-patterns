@@ -1,0 +1,8 @@
+grumphp:
+    tasks: 
+        phpmd:
+            whitelist_patterns: ['/^src/']
+            ruleset: ['rulesets.xml']
+            report_format: ansi  
+        psalm:
+            config: psalm.xml

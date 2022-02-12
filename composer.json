@@ -15,9 +15,16 @@
     }
   ],
   "minimum-stability": "stable",
+  "config": {
+    "allow-plugins": {
+      "phpro/grumphp": true
+    }
+  },
   "require-dev": {
+    "phpmd/phpmd": "^2.11",
+    "phpro/grumphp": "^1.8",
     "phpunit/phpunit": "^9.5",
     "psalm/plugin-phpunit": "^0.16.1",
-    "friendsofphp/php-cs-fixer": "^3.5"
+    "friendsofphp/php-cs-fixer": "^3.4"
   }
 }
