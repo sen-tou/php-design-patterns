@@ -27,8 +27,10 @@ class History
 
     /**
      * @psalm-return T
+     *
+     * @throws ErrorException
      */
-    public function getPrevious(): ?StateInterface
+    public function getPrevious(): StateInterface
     {
         array_pop($this->states);
 
