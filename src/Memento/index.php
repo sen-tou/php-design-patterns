@@ -19,7 +19,10 @@ $history->push(new BookingState($booking));
 
 echo $booking->getDate()->format(DATE_ISO8601).PHP_EOL; // 2022-01-30T00:00:00+0100
 
-// undo will get the previous change and also resets its internal state to that previous change
-$booking->restore($history->getPrevious());
+try {
+    $booking->restore($history->getPrevious());
+} catch (ErrorException $e) {
+    echo 'If there is no previous change we need to catch this error';
+}
 
 echo $booking->getDate()->format(DATE_ISO8601).PHP_EOL; // 2022-01-01T00:00:00+0100
