@@ -2,18 +2,16 @@
 .PHONY: it
 it: coding-standards tests
 
-.PHONY: grum
-grum: vendor/bin/grumphp
-
-.PHONY: code-coverage
-code-coverage: vendor
-	vendor/bin/phpunit --coverage-text
 
 .PHONY: coding-standards
 coding-standards: vendor
 	vendor/bin/phpmd src ansi rulesets.xml
 	vendor/bin/psalm src -c psalm.xml
 	vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --diff --verbose
+
+.PHONY: code-coverage
+code-coverage: vendor
+	vendor/bin/phpunit --coverage-text
 
 .PHONY: tests
 tests: vendor
