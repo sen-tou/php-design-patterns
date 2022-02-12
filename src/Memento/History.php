@@ -28,13 +28,14 @@ class History
     /**
      * @psalm-return T
      */
-    public function undo(): StateInterface
+    public function getPrevious(): ?StateInterface
     {
         array_pop($this->states);
 
-        $previousState = (int) array_key_last($this->states);
-        if (!$previousState) {
-            throw new ErrorException('There is nothing to undo');
+        $previousState = array_key_last($this->states);
+
+        if (null === $previousState) {
+            throw new ErrorException('There is no previous state');
         }
 
         return $this->states[$previousState];
