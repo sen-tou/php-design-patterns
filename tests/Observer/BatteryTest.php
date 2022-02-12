@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Stvbyr\PhpDesignPatterns\Test\Observer;
 
 use PHPUnit\Framework\TestCase;
@@ -7,7 +9,7 @@ use Stvbyr\PhpDesignPatterns\Observer\Battery;
 
 class BatteryTest extends TestCase
 {
-    public function testBatteryCanBeCreatedWithCorrentCharge()
+    public function testBatteryCanBeCreatedWithCorrentCharge(): void
     {
         $battery = new Battery(50);
         $battery2 = new Battery(100);
@@ -16,7 +18,7 @@ class BatteryTest extends TestCase
         $this->assertSame(100, $battery2->getCharge());
     }
 
-    public function testBatteryChargeCanBeUpdate()
+    public function testBatteryChargeCanBeUpdate(): void
     {
         $battery = new Battery(50);
         $battery->setCharge(60);
@@ -24,7 +26,7 @@ class BatteryTest extends TestCase
         $this->assertSame(60, $battery->getCharge());
     }
 
-    public function testBatteryChargeJustBetweenZeroAndOneHundredAllowed()
+    public function testBatteryChargeJustBetweenZeroAndOneHundredAllowed(): void
     {
         try {
             new Battery(-1);
