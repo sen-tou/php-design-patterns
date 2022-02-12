@@ -6,3 +6,7 @@ grumphp:
             report_format: ansi  
         psalm:
             config: psalm.xml
+        phpcsfixer: 
+            config: .php-cs-fixer.php
+            diff: true
+            verbose: true    
