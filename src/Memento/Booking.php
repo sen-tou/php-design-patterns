@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Stvbyr\PhpDesignPatterns\Memento;
 
 use DateTimeInterface;
@@ -10,7 +12,7 @@ class Booking
     {
     }
 
-    public function restore(BookingState $bookingState)
+    public function restore(BookingState $bookingState): void
     {
         $this->number = $bookingState->getNumber();
         $this->date = $bookingState->getDate();
