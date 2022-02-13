@@ -12,9 +12,8 @@ class MessageBatteryChargeTest extends TestCase
 {
     public const CHARGE = 6;
 
-    public function testBatteryStateCanBeCreatedWithCorrentCharge(): void
+    public function testBatteryStateCanBeCreatedWithCurrentCharge(): void
     {
-        /** @var BatteryState|MockObject */
         $batteryStateMock = $this->getMockBuilder(BatteryState::class)
             ->disableOriginalConstructor()
             ->getMock();
@@ -26,6 +25,6 @@ class MessageBatteryChargeTest extends TestCase
         $logBatteryChargeHandler = new LogBatteryCharge();
         $logBatteryChargeHandler->onNotification($batteryStateMock);
 
-        $this->expectOutputString('The charge of the battery is '.self::CHARGE);
+        $this->expectOutputString('The charge of the battery is '.self::CHARGE."\n");
     }
 }
