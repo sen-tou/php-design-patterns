@@ -33,7 +33,7 @@ class Battery implements Observable
         return $this->charge;
     }
 
-    public function add(Observer $observer): void
+    public function register(Observer $observer): void
     {
         $this->observers[] = $observer;
     }

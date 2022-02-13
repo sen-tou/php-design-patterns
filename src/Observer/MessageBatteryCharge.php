@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Stvbyr\PhpDesignPatterns\Observer;
 
-class MessageBatteryCharge
+class MessageBatteryCharge implements Observer
 {
     private function log(int $charge): void
     {
-        // implement messaging logic eg. using a message queue to send the curretn charge
+        // implement messaging logic eg. using a message queue to send the current charge
         if ($charge < 20) {
-            echo sprintf('Please charge the battery. Charge is %s', $charge);
+            echo sprintf("Please charge the battery. Charge is %s\n", $charge);
         }
     }
 

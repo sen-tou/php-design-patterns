@@ -6,7 +6,7 @@ namespace Stvbyr\PhpDesignPatterns\Observer;
 
 interface Observable
 {
-    public function add(Observer $observer): void;
+    public function register(Observer $observer): void;
 
     public function notify(): void;
 }
