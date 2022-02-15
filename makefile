@@ -2,7 +2,6 @@
 .PHONY: it
 it: coding-standards tests
 
-
 .PHONY: coding-standards
 coding-standards: vendor
 	vendor/bin/phpmd src ansi rulesets.xml
