@@ -8,7 +8,7 @@ return $config
     ->setRiskyAllowed(true)
     ->setRules([
         '@Symfony' => true,
-        'declare_strict_types' => true,
+        '@PSR12' => true,
     ])
     ->setFinder(
         PhpCsFixer\Finder::create()
