@@ -16,6 +16,7 @@ class ProjectTree
 
     public function displayTree(): void
     {
+        $this->sortTree();
         foreach ($this->leafs as $leaf) {
             echo "<{$leaf->getType()}> {$leaf->getTitle()}".PHP_EOL;
         }
