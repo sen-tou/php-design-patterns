@@ -22,6 +22,5 @@ $projectTree->addLeaf(new DirectoryLeafAdapter(
 $projectTree->addLeaf(new DirectoryLeafAdapter(
     new Directory('/resources/css')
 ));
-$projectTree->addLeaf(new Page('Blog'));
 
 $projectTree->displayTree();
