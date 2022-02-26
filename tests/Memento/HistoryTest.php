@@ -8,9 +8,9 @@ use PHPUnit\Framework\TestCase;
 use Stvbyr\PhpDesignPatterns\Memento\History;
 use Stvbyr\PhpDesignPatterns\Memento\StateInterface;
 
-class BatteryStateTest extends TestCase
+class HistoryTest extends TestCase
 {
-    public function testCanGetLatestEntry(): void
+    public function testReturnsTheLatestEntry(): void
     {
         $history = new History();
 
@@ -25,7 +25,7 @@ class BatteryStateTest extends TestCase
         $this->assertSame($entry, $latestEntry);
     }
 
-    public function testHistoryThrowsErrorIfThereIsNoPreviousState(): void
+    public function testThrowsErrorIfThereIsNoPreviousState(): void
     {
         try {
             $history = new History();

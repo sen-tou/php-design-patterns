@@ -10,7 +10,7 @@ use Stvbyr\PhpDesignPatterns\Strategy\Type;
 
 class ReminderServiceTest extends TestCase
 {
-    public function testEchos()
+    public function testEchosNotifications()
     {
         $reminder = $this->createMock(Reminder::class);
         $reminder->method('getHandledNotifications')

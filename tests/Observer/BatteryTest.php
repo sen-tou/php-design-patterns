@@ -9,7 +9,7 @@ use Stvbyr\PhpDesignPatterns\Observer\Battery;
 
 class BatteryTest extends TestCase
 {
-    public function testBatteryCanBeCreatedWithCorrentCharge(): void
+    public function testCanBeCreatedWithCurrentCharge(): void
     {
         $battery = new Battery(50);
         $battery2 = new Battery(100);
@@ -18,7 +18,7 @@ class BatteryTest extends TestCase
         $this->assertSame(100, $battery2->getCharge());
     }
 
-    public function testBatteryChargeCanBeUpdate(): void
+    public function testChargeCanBeUpdate(): void
     {
         $battery = new Battery(50);
         $battery->setCharge(60);
@@ -26,7 +26,7 @@ class BatteryTest extends TestCase
         $this->assertSame(60, $battery->getCharge());
     }
 
-    public function testBatteryChargeJustBetweenZeroAndOneHundredAllowed(): void
+    public function testChargeJustBetweenZeroAndOneHundredAllowed(): void
     {
         try {
             new Battery(-1);
