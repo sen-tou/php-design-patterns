@@ -1,3 +1,0 @@
-# Abstract Factory Pattern
-
-## Implementation

@@ -9,7 +9,7 @@ use Stvbyr\PhpDesignPatterns\Observer\BatteryState;
 
 class BatteryStateTest extends TestCase
 {
-    public function testBatteryStateCanBeCreatedWithCorrentCharge(): void
+    public function testCanBeCreatedWithCurrentCharge(): void
     {
         $battery = new BatteryState(50);
 

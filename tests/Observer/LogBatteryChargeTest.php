@@ -12,7 +12,7 @@ class LogBatteryChargeTest extends TestCase
 {
     public const CHARGE = 6;
 
-    public function testBatteryStateCanBeCreatedWithCurrentCharge(): void
+    public function testCanOutputTheChargeOfTheBatteryState(): void
     {
         $batteryStateMock = $this->getMockBuilder(BatteryState::class)
             ->disableOriginalConstructor()

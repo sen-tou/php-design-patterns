@@ -12,7 +12,7 @@ class MessageBatteryChargeTest extends TestCase
     public const CHARGE_ABOVE_20 = 69;
     private $batteryStateMock;
 
-    public function testIfBatteryChargeIsLowerThan20PercentThanShowAReminderToChargeIt(): void
+    public function testOutputsAReminderToChargeItIfBatteryChargeIsLowerThan20Percent(): void
     {
         $this->batteryStateMock->expects($this->once())
             ->method('getLoad')
@@ -24,7 +24,7 @@ class MessageBatteryChargeTest extends TestCase
         $this->expectOutputString('Please charge the battery. Charge is '.self::CHARGE_BELOW_20."\n");
     }
 
-    public function testIfBatteryChargeIsAbove20PercentThanShowABatteryOkMessage(): void
+    public function testLogsABatteryOkMessageIfBatteryChargeIsAbove20Percent(): void
     {
         $this->batteryStateMock->expects($this->once())
             ->method('getLoad')

@@ -14,7 +14,7 @@ use Stvbyr\PhpDesignPatterns\FactoryMethod\UserByPositionFactory;
 
 class UserByPositionFactoryTest extends TestCase
 {
-    public function testFactoryCanCreateBoardMember(): void
+    public function testCanCreateBoardMember(): void
     {
         $userByPositionFactory = new UserByPositionFactory();
 
@@ -26,7 +26,7 @@ class UserByPositionFactoryTest extends TestCase
         $this->assertInstanceOf(BoardMember::class, $boardMember);
     }
 
-    public function testFactoryCanCreateLead(): void
+    public function testCanCreateLead(): void
     {
         $userByPositionFactory = new UserByPositionFactory();
 
@@ -38,7 +38,7 @@ class UserByPositionFactoryTest extends TestCase
         $this->assertInstanceOf(Lead::class, $lead);
     }
 
-    public function testFactoryCanCreateEmployee(): void
+    public function testCanCreateEmployee(): void
     {
         $userByPositionFactory = new UserByPositionFactory();
 
@@ -50,7 +50,7 @@ class UserByPositionFactoryTest extends TestCase
         $this->assertInstanceOf(Employee::class, $employee);
     }
 
-    public function testFactoryCanCreateGuest(): void
+    public function testCanCreateGuest(): void
     {
         $userByPositionFactory = new UserByPositionFactory();
 
