@@ -13,6 +13,10 @@ class ReminderService
 
     public function sendNotifications(): void
     {
-        $this->reminder->sendNotifications();
+        $notifications = $this->reminder->getHandledNotifications();
+
+        foreach ($notifications as $notification) {
+            echo $notification->getMessage().PHP_EOL;
+        }
     }
 }

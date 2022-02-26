@@ -4,8 +4,8 @@ namespace Stvbyr\PhpDesignPatterns\Strategy;
 
 class NoReminder implements Reminder
 {
-    public function sendNotifications(): void
+    public function getHandledNotifications(): array
     {
-        return;
+        return [];
     }
 }

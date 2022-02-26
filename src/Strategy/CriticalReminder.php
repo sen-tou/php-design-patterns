@@ -12,17 +12,13 @@ class CriticalReminder implements Reminder
         $this->notifications = $notifications;
     }
 
-    public function sendNotifications(): void
+    public function getHandledNotifications(): array
     {
-        $filtered = array_filter($this->notifications, function (Notification $notification) {
+        return array_values(array_filter($this->notifications, function (Notification $notification) {
             return in_array(
                 $notification->getType(),
                 [new Type(Type::BREAKING), new Type(Type::EMERGENCY)]
             );
-        });
-
-        foreach ($filtered as $notification) {
-            echo $notification->getMessage().PHP_EOL;
-        }
+        }));
     }
 }

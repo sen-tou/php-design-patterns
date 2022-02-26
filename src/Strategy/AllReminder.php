@@ -12,10 +12,8 @@ class AllReminder implements Reminder
         $this->notifications = $notifications;
     }
 
-    public function sendNotifications(): void
+    public function getHandledNotifications(): array
     {
-        foreach ($this->notifications as $notification) {
-            echo $notification->getMessage().PHP_EOL;
-        }
+        return $this->notifications;
     }
 }

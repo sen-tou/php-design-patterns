@@ -7,14 +7,12 @@ use Stvbyr\PhpDesignPatterns\Strategy\NoReminder;
 
 class NoReminderTest extends TestCase
 {
-    public function testEchosNothing(): void
+    public function testReturnsNoNotifications(): void
     {
         $reminder = new NoReminder();
 
-        ob_start();
-        $reminder->sendNotifications();
-        $output = ob_get_clean();
+        $handledNotifications = $reminder->getHandledNotifications();
 
-        $this->assertEquals('', $output);
+        $this->assertEquals([], $handledNotifications);
     }
 }

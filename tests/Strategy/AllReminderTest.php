@@ -9,7 +9,7 @@ use Stvbyr\PhpDesignPatterns\Strategy\Type;
 
 class AllReminderTest extends TestCase
 {
-    public function testEchosAllNotifications(): void
+    public function testReturnsAllNotificationsUnchanged(): void
     {
         $notifications = [
             new Notification('This is critical.', new Type(Type::EMERGENCY)),
@@ -18,10 +18,8 @@ class AllReminderTest extends TestCase
         ];
         $reminder = new AllReminder($notifications);
 
-        ob_start();
-        $reminder->sendNotifications();
-        $output = ob_get_clean();
+        $handledNotifications = $reminder->getHandledNotifications();
 
-        $this->assertEquals('This is critical.'.PHP_EOL.'This is not.'.PHP_EOL.'But this is.'.PHP_EOL, $output);
+        $this->assertEquals($notifications, $handledNotifications);
     }
 }

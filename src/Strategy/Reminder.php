@@ -4,5 +4,8 @@ namespace Stvbyr\PhpDesignPatterns\Strategy;
 
 interface Reminder
 {
-    public function sendNotifications(): void;
+    /**
+     * @return Notification[]
+     */
+    public function getHandledNotifications(): array;
 }
