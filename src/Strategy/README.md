@@ -10,6 +10,8 @@ Your `Notification`s consist of a message and a `Type`. However, there is no "al
 
 You come to the conclusion that you want to remind people with the notifications they choose. So you abstract that functionality in a `Reminder` interface. It contains a method `getHandledNotifications` that returns the notifications that the users wants.
 
+These reminders are similar to each other but differ in their implementation.
+
 You further decide to create a `ReminderService` that sends the notifications. 
 
 After that you implement the reminder cases that were specified in the first sentence. These are `AllReminder`, `CriticalReminder` and `NoReminder`.
@@ -24,6 +26,8 @@ Namely, the NullObject Pattern. Can you guess which class represents a NullObjec
 
 If you look at the index.php you may ask yourself: That is a lot of setup. How could this be useful in a real application?
 
-The information which kind of notification the user wants is likely saved in a database of some sort. What you would do is using a factory (@see FactoryMethod) that would dynamically create `Reminder` objects based on the information that was saved. 
+The information, which kind of notification the user wants, is likely saved in a database of some sort. What you would do is using a factory (@see FactoryMethod) that would dynamically create `Reminder` objects based on the information that was saved. 
 
 For example: You have a db field `notifications` and the value of that field is `all`. The factory will now create a `AllReminder` object that is later passed to the `ReminderService`.
+
+This pattern is really powerful as it allows you to easily add more similar implementations of that Reminder. You could for example add a `InformationReminder` where only information typed notifications are sent.
