@@ -4,7 +4,7 @@ it: coding-standards tests
 
 .PHONY: coding-standards
 coding-standards: vendor
-	vendor/bin/phpmd src ansi rulesets.xml
+	# vendor/bin/phpmd src ansi rulesets.xml
 	vendor/bin/psalm src -c psalm.xml
 	vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --diff --verbose
 
